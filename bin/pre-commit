@@ -47,5 +47,5 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "${green}[Pre-commit Hook]: Passed. Continuing with commit!"
+echo "${green}[Pre-commit Hook]: Passed. Continuing with commit!${NC}"
 exit 0
