@@ -8,8 +8,14 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create user given username and password' do
-    post url_for(controller: 'user', action: 'create', username: 'testing', password: '1234567890',
-                 password_confirmation: '1234567890')
+    post url_for(controller: 'user', action: 'create'), params: { username: 'testing', password: '1234567890',
+                                                                  password_confirmation: '1234567890' }
     assert_response :success
+  end
+
+  test 'should not create user given a user with an invalid password' do
+    post url_for(controller: 'user', action: 'create'), params: { username: 'testing', password: '12345',
+                                                                  password_confirmation: '12345' }
+    assert_response :bad_request
   end
 end
