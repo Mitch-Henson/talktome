@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'tmp/**/*'
+  DisplayCopNames: true
+
+Metrics/LineLength:
+  Max: 120
