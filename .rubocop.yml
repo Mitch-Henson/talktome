@@ -1,7 +1,13 @@
 AllCops:
   Exclude:
-    - 'tmp/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'bin/spring'
+    - 'Gemfile'
   DisplayCopNames: true
 
 Metrics/LineLength:
   Max: 120
+
+Style/Documentation:
+  Enabled: false
